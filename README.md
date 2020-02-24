@@ -2,13 +2,14 @@
 
 This is a command line implementation of the board game Mastermind written by Paul Knowles in Python as a coding exercise for the LinkedIn REACH program.
 
-I was recently given the Board Game version of Mastermind which I have played a few times with my 7-year-old.
-While playing it, I did start to consider how I would program this game in Python. Luckily I was familiar with the game and had done a little bit of program design in my head before this project.
-
-https://github.com/pablokimon/REACH-Mastermind/blob/master/img/IMG_3225.jpg
 <p align="middle">
 <img src = "./img/IMG_3225.jpg" width="1024" />
 </p>
+
+I was recently given the Board Game version of Mastermind which I have played a few times with my 7-year-old.
+While playing it, I did start to consider how I would program this game in Python. Luckily I was familiar with the game and had done a little bit of program design in my head before this project.
+
+
 ## Table of Contents:
 
 1. [Game Overview](README.md#game-overview)
