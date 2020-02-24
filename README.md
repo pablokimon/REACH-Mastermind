@@ -99,5 +99,5 @@ Overall I really enjoyed creating this on a timeline and look forward to adding 
 # Takeaways
 
 Even a relatively  simple game where I know the rules can take quite a bit of time to program and requires a good plan and execution.
-Next time I would try to anticipate the need for helper functions to reduce redundant code.
+Next time I would try to anticipate the need for helper functions to reduce redundant code. Also, I wished I had used the word "position" instead of "location" from the outset.
 
