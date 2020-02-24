@@ -63,7 +63,7 @@ The functions within mastermind.py and their uses are:
   
   * giveHint  - (unfinished) generates a hint for the user if they are stuck. 
   
-  * getGuess - takes input from the user and verifies it meets the requirements of the game (integer, in range and correct length)
+  * getGuess - takes input from the user and verifies it meets the requirements of the game (integer, in range, and correct length)
   
   * setParameters - (unfinished) changes the parameters of the game (patter size, pattern range, number of guesses, etc)
   
