@@ -7,7 +7,7 @@ This is a command line implementation of the board game Mastermind written by Pa
 </p>
 
 I was recently given the Board Game version of Mastermind which I have played a few times with my 7-year-old.
-While playing it, I did start to consider how I would program this game in Python. Luckily I was familiar with the game and had done a little bit of program design in my head before this project.
+While playing it, I did start to consider how I would program this game in Python. Luckily, I was familiar with the game and had done a little bit of program design in my head before being given this project.
 
 
 ## Table of Contents:
@@ -28,12 +28,10 @@ You will need Python 3.5, the requests package and an internet connection.
 
 # Game Rules
 
-At the start of the game the computer will randomly select a pattern of four different numbers from a total of 8 different numbers.
+At the start of the game, the computer will randomly select a pattern of four different numbers (duplicates allowed) from a total of 8 different numbers.
 The player will then have 10 chances to correctly guess the pattern.
 
-After each guess attempt, the computer will provide feedback whether the player:
-    •had guessed a number correctly, and/or
-    •had guessed a number and location correctly.
+After each guess attempt, the computer will provide feedback whether the player had: guessed a number correctly, and/or guessed a number and position correctly.
 
 The computer will not tell you which numbers you guessed correctly, you must use a combination of skill, luck and deductive reasoning to win!
 
@@ -42,11 +40,11 @@ If the pattern was [4,5,6,7]
 and you guessed    [7,5,1,2]
 
 The computer will tell you:
-Correct Location and Number: 1, Correct Number Only: 1
+Correct position and Number: 1, Correct Number Only: 1
 
 Which means:
-you got one number and location right (5)
-you got one number right (7) but in the wrong location
+you got one number and position right (5)
+you got one number right (7) but in the wrong position
 
 # Code Explanation
 
@@ -57,7 +55,7 @@ The file starts with importing the neccessary dependancies from the python libra
 The functions:
   * getRandomPattern performs a call to the www.random.org/integers API to obtain random integers for the pattern to be guessed.
 
-  * checkGuess compares the guess to the pattern and returns the count of correct numbers only and correct numbers in the correct location.
+  * checkGuess compares the guess to the pattern and returns the count of correct numbers only and correct numbers in the correct position.
   
   * guessInRange - checks if the guess contains numbers in the range of numbers which the random pattern is drawn from.
   
@@ -80,7 +78,7 @@ I've played to board game a few times recently and was actually considering how 
 
 The first challenges were making sure to get good input from the user that satisfied a guess that could be compared to the pattern.
 
-The second challenge was successfully comparing the guess to the pattern. Initially I was over valuing matches and had to modify my approach. First I thought if I checked for number and location then number only that would catch all cases. But that approach didn't account for a location and number match later in the pattern and gave a false positive for a number only match that was earlier in the pattern. Ultimately I made a copy of the pattern and guess, removed the number and location matches then compared the remaining values to determine number only matches.
+The second challenge was successfully comparing the guess to the pattern. Initially I was over valuing matches and had to modify my approach. First I thought if I checked for number and position then number only that would catch all cases. But that approach didn't account for a position and number match later in the pattern and gave a false positive for a number only match that was earlier in the pattern. Ultimately I made a copy of the pattern and guess, removed the number and position matches then compared the remaining values to determine number only matches.
 
 The third challenge was unpacking the dictionary of guess results and displaying them in an effective way for the player to use them to make better guesses.
 
