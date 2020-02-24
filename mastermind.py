@@ -41,16 +41,16 @@ def checkGuess(guess,pattern):
     This function expects both guess and pattern to be lists of the same size.
     This similarity is checked when the guess is captured before it is passed here.
     We iterate through the guess from index 0.
-    First we check for correct number and location and then correct number from remaining elements.
+    First we check for correct number and position and then correct number from remaining elements.
     '''
     
-    correctLocation = 0 #counter for number of guesses that are in the correct number and location
-    correctNumber = 0 #conter for the number of guesses that are only a correct number but NOT in the correct place
-    pattern_copy = pattern.copy() # a copy of the pattern so the correct location numbers can be removed and compared to the other guess values
-    guess_copy = guess.copy() # a copy of the guess so that the correct location numbers can be removed and the remaining compared to the pattern_
+    correctLocation = 0 #counter for number of guesses that are in the correct number and position
+    correctNumber = 0 #conter for the number of guesses that are only a correct number but NOT in the correct position
+    pattern_copy = pattern.copy() # a copy of the pattern so the correct position numbers can be removed and compared to the other guess values
+    guess_copy = guess.copy() # a copy of the guess so that the correct position numbers can be removed and the remaining compared to the pattern
     
     for x in range(len(guess)): #loops over the length of the guess, uses x as an index of the list
-        if guess[x] == pattern[x]: #check if the index of the guess is in the correct place and correct number then increment counter
+        if guess[x] == pattern[x]: #check if the index of the guess is in the correct position and correct number then increment counter
             correctLocation += 1 
             pattern_copy.remove(guess[x]) #remove first instance of current correct guess number from pattern_copy so it doesn't get counted again
             guess_copy.remove(guess[x]) # remove first instance of current correct guess number from guess_copy so it doesn't get counted again
@@ -60,7 +60,7 @@ def checkGuess(guess,pattern):
             correctNumber += 1 # increment correct number
             pattern_copy.remove(x) # and remove from pattern_copy so it doesn't get counted again
     
-    return correctNumber,correctLocation #return the counts of correct number only and correct number and location, respectively
+    return correctNumber,correctLocation #return the counts of correct number only and correct number and position, respectively
 
 
 
@@ -223,7 +223,7 @@ The player will then have 10 chances to correctly guess the pattern.
 
 After each guess attempt, the computer will provide feedback whether the player:
     •had guessed a number correctly, and/or
-    •had guessed a number and location correctly.
+    •had guessed a number and position correctly.
 
 The computer will not tell you which numbers you guessed correctly, you must use a combination of skill, luck and deductive reasoning to win!
 
@@ -232,11 +232,11 @@ If the pattern was [4,5,6,7]
 and you guessed    [7,5,1,2]
 
 The computer will tell you:
-Correct Location and Number: 1, Correct Number Only: 1
+Correct Number and Position: 1, Correct Number Only: 1
 
 Which means:
-you got one number and location right (5)
-you got one number right (7) but in the wrong location
+you got one number and position right (5)
+you got one number right (7) but in the wrong position
 
 Got it?
 
@@ -277,7 +277,7 @@ Press enter to play!
             
         result_dict[guess_number]={'Guess':guess,'Correct Number':correctNumber, 'Correct Location':correctLocation} # add guess and results to dict
         for keys,values in result_dict.items(): #iterate through dict of guess results
-            print('Guess #',keys,values['Guess'],'Correct Number Only:',values['Correct Number'],'Correct Number and Location:',values['Correct Location']) # print each guess and results for review
+            print('Guess #',keys,values['Guess'],'Correct Number Only:',values['Correct Number'],'Correct Number and Position:',values['Correct Location']) # print each guess and results for review
   
     if win: 
         shuffleWord(word='Congratulations!',shuffles=5) #shuffle congrats
