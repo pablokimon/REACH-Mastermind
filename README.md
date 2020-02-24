@@ -65,39 +65,39 @@ The functions within mastermind.py and their uses are:
   
   * getGuess - takes input from the user and verifies it meets the requirements of the game (integer, in range, and correct length)
   
-  * setParameters - (unfinished) changes the parameters of the game (patter size, pattern range, number of guesses, etc)
+  * setParameters - (unfinished) changes the parameters of the game (pattern size, pattern range, number of guesses, etc)
   
-  * shuffleWord - a simple little function purely decorative to shuffle the letters of a word in place then display the unshuffled word after a set number of shuffles.
+  * shuffleWord - shuffles the letters of a word in place then display the unshuffled word after a set number of shuffles. A simple purely decorative, little function. 
   
-  * clear - an operting system agnostic function I found on [stackoverflow](https://stackoverflow.com/questions/517970/how-to-clear-the-interpreter-console) which is used to clear the output screen.
+  * clear - clears the screen. Operting system agnostic function I found on [stackoverflow](https://stackoverflow.com/questions/517970/how-to-clear-the-interpreter-console).
   
   * startGame - the driver which contains the default game parameter values and puts it all together
   
   
 # Challenges
 
-Understanding the rules of this game can be a challenge, luckily I've played it and understand the game already.
+Understanding the rules of this game can be a challenge, luckily having learned to play it recently I already understood the rules and games ojectives.
 
-The first challenge was ensuring accurate input from the user that satisfied the requirements of a guess that could be compared to the pattern (same length, in range, nubmers only).
+The first challenge was ensuring accurate input from the user that satisfied the requirements of a "guess" that could be compared to the pattern (same length, in range, nubmers only).
 
-The second challenge was to successfully compare the guess to the pattern. Initially the code was reporting more matches than there acutally were and I had to modify my approach. First I thought if I checked for number and position then number only that would catch all cases. But that approach didn't account for a position and number match later in the pattern and gave a false positive for a number only match that was earlier in the pattern. Ultimately I made a copy of the pattern and guess, removed the number and position matches then compared the remaining values to determine number only matches.
+The second challenge was to successfully compare the "guess" to the "pattern". Initially the code was reporting more matches than there acutally were and I had to modify my approach. First I thought if I checked for "number and position" then "number only" that would catch all cases. But that approach didn't account for a "number and position" match later in the "pattern" and gave a false positive for a "number only" match that was earlier in the pattern. Ultimately I made a copy of the "pattern" and "guess", removed the "number and position" matches then compared the remaining values to determine "number only" matches.
 
 The third challenge was unpacking the dictionary of guess results and displaying them in an effective way for the player to use them to make better guesses.
 
-Overall I really enjoyed creating this on a timeline and look forward to adding more to it.
+Overall, I really enjoyed creating this on a timeline and look forward to adding more to it.
 
 # Next Steps
 
-* Complete the setParameters function to allow players to change parameters of the game. This could use a couple nice helper functions to reduce redundant code to check for good inputs (numbers in certain range, etc)
+* Complete the setParameters function to allow players to change parameters of the game. This could use a couple of nice helper functions to reduce redundant code to check for good inputs (numbers in certain range, etc.)
 
 * Complete giveHint function to give player hints. I'm excited about the range this function could cover: If there are no guesses, it could randomly help suggest a number. If there are guesses, based on guesses it could help guide the player to which numbers were correct or tell them which ones were close. 
 
 * Publish to a webpage so anyone can play without downloading and running the .py file.
 
-* Ultimately add graphics and GUI.
+* Ultimately, add graphics and GUI.
 
 # Takeaways
 
-Even a relatively  simple game where I know the rules can take quite a bit of time to program and requires a good plan and execution.
-Next time I would try to anticipate the need for helper functions to reduce redundant code. Also, I wished I had used the word "position" instead of "location" from the outset.
+Even a relatively simple game in which I know the rules can take quite a bit of time to program, and requires a good plan and execution.
+Next time I would try to anticipate the need for helper functions to reduce redundant code. Also, I wished I had used the word "position" instead of "location" from the outset, which I had to replace later on as it was a more clear word to use.
 
