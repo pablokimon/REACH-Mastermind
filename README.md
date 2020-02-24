@@ -78,9 +78,9 @@ The functions within mastermind.py and their use:
 
 Understanding the rules of this game can be a challenge, luckily I've played it and understand the game already.
 
-The first challenge was ensuring accurate input from the user that satisfied a guess that could be compared to the pattern.
+The first challenge was ensuring accurate input from the user that satisfied the requirements of a guess that could be compared to the pattern (same length, in range, nubmers only).
 
-The second challenge was successfully comparing the guess to the pattern. Initially I was over valuing matches and had to modify my approach. First I thought if I checked for number and position then number only that would catch all cases. But that approach didn't account for a position and number match later in the pattern and gave a false positive for a number only match that was earlier in the pattern. Ultimately I made a copy of the pattern and guess, removed the number and position matches then compared the remaining values to determine number only matches.
+The second challenge was to successfully compare the guess to the pattern. Initially the code was reporting more matches than there acutally were and I had to modify my approach. First I thought if I checked for number and position then number only that would catch all cases. But that approach didn't account for a position and number match later in the pattern and gave a false positive for a number only match that was earlier in the pattern. Ultimately I made a copy of the pattern and guess, removed the number and position matches then compared the remaining values to determine number only matches.
 
 The third challenge was unpacking the dictionary of guess results and displaying them in an effective way for the player to use them to make better guesses.
 
