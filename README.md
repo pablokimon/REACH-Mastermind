@@ -3,7 +3,7 @@
 This is a command line implementation of the board game Mastermind written by Paul Knowles in Python as a coding exercise for the LinkedIn REACH program.
 
 <p align="middle">
-<img src = "./img/boardgame.jpg" width="1024" />
+<img src = "./img/boardgame.JPG" width="1024" />
 </p>
 
 I was recently given the original, analog board game version of Mastermind which I have played a few times with my 7-year-old.
