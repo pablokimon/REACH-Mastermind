@@ -23,7 +23,7 @@ While playing it, I did start to consider how I would program this game in Pytho
 
 To run this game on your local machine, clone this repo and simply run the mastermind.py file from the command line.
 
-You will need Python 3.5, the requests package and an internet connection.
+You will need Python 3.5, the requests package, and an internet connection.
 
 
 # Game Rules
@@ -32,16 +32,16 @@ At the start of the game, the computer will randomly select a pattern of four di
 
 After each guess, the computer will provide feedback whether the player had: 
  * guessed a number correctly, and/or 
- * guessed a number and position correctly.
+ * guessed a number and position correctly
 
 The computer will not tell you which numbers you guessed correctly! You must use a combination of skill, luck and deductive reasoning to win!
 
 Example game play:
-If the pattern was [4,5,6,7]
-and you guessed    [7,5,1,2]
+If the pattern was [4, 5, 6, 7]
+and you guessed    [7, 5, 1, 2]
 
 The computer will tell you:
-Correct position and Number: 1, Correct Number Only: 1
+Correct number and position: 1, Correct number only: 1
 
 Which means:
 you got one number and position right (5)
@@ -53,7 +53,7 @@ The entire game is contained inside the mastermind.py file, except for the libra
 
 The file starts with importing the necessary dependencies from the python libraries.
 
-The functions within mastermind.py and their use:
+The functions within mastermind.py and their uses are:
 
   * getRandomPattern - performs a call to the www.random.org/integers API to obtain random integers for the pattern to be guessed.
 
@@ -61,11 +61,11 @@ The functions within mastermind.py and their use:
   
   * guessInRange - checks if the guess contains numbers in the range of numbers which the random pattern is drawn from.
   
-  * giveHint  - unfinished and would be used to generate a hint for the user if they are stuck.
+  * giveHint  - (unfinished) generates a hint for the user if they are stuck. 
   
   * getGuess - takes input from the user and verifies it meets the requirements of the game (integer, in range and correct length)
   
-  * setParameters - unfinished and would be used to change the parameters of the game (patter size, pattern range, number of guesses, etc)
+  * setParameters - (unfinished) changes the parameters of the game (patter size, pattern range, number of guesses, etc)
   
   * shuffleWord - a simple little function purely decorative to shuffle the letters of a word in place then display the unshuffled word after a set number of shuffles.
   
