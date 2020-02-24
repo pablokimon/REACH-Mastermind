@@ -2,6 +2,9 @@
 
 This is a command line implementation of the board game Mastermind written by Paul Knowles in Python as a coding exercise for the LinkedIn REACH program.
 
+I was recently given the Board Game version of Mastermind which I have played a few times with my 7-year-old.
+While playing it, I did start to consider how I would program this game in Python. Luckily I was familiar with the game and had done a little bit of program design in my head before this project.
+
 ## Table of Contents:
 
 1. [Game Overview](README.md#game-overview)
@@ -51,17 +54,17 @@ The functions:
 
   * checkGuess compares the guess to the pattern and returns the count of correct numbers only and correct numbers in the correct location.
   
-  * guessInRange checks if the guess contains numbers in the range of numbers which the random pattern is drawn from.
+  * guessInRange - checks if the guess contains numbers in the range of numbers which the random pattern is drawn from.
   
-  * giveHint is unfinished and would be used to generate a hint for the user if they are stuck.
+  * giveHint  - unfinished and would be used to generate a hint for the user if they are stuck.
   
-  * getGuess takes input from the user and verifies it meets the requirements of the game (integer, in range and correct length)
+  * getGuess - takes input from the user and verifies it meets the requirements of the game (integer, in range and correct length)
   
-  * setParameters is unfinished and would be used to change the parameters of the game (patter size, pattern range, number of guesses, etc)
+  * setParameters - unfinished and would be used to change the parameters of the game (patter size, pattern range, number of guesses, etc)
   
-  * shuffleWord is a simple little function purely decorative to shuffle the letters of a word in place then display the unshuffled word after a set number of shuffles.
+  * shuffleWord - a simple little function purely decorative to shuffle the letters of a word in place then display the unshuffled word after a set number of shuffles.
   
-  * clear is an operting system agnostic function I found on stackoverflow which is used to clear the output screen.
+  * clear - an operting system agnostic function I found on [stackoverflow](https://stackoverflow.com/questions/517970/how-to-clear-the-interpreter-console) which is used to clear the output screen.
   
   * startGame is the driver which contains the default game parameter values and puts it all together
   
@@ -79,3 +82,17 @@ The third challenge was unpacking the dictionary of guess results and displaying
 Overall I really enjoyed creating this on a timeline and look forward to adding more to it.
 
 # Next Steps
+
+* Complete the setParameters function to allow players to change parameters of the game. This could use a couple nice helper functions to reduce redundant code to check for good inputs (numbers in certain range, etc)
+
+* Complete giveHint function to give player hints. I'm excited about the range this function could cover: If there are no guesses, it could randomly help suggest a number. If there are guesses, based on guesses it could help guide the player to which numbers were correct or tell them which ones were close. 
+
+* Publish to a webpage so anyone can play without downloading and running the .py file.
+
+* Ultimately add graphics and GUI.
+
+# Takeaways
+
+Even a realtively simple game where I know the rules can take quite a bit of time to program and requires a good plan and execution.
+Next time I would try to anticiate the need for helper functions to reduce redundant code.
+
