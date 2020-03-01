@@ -72,8 +72,8 @@ def guessInRange(guess,pattern_range):
         if g not in pattern_range:
             print("Sorry one of your guesses was outside the range")
             return False
-        else:
-            return True
+        #else:
+    return True
 
 
 
@@ -132,40 +132,63 @@ def setParameters(pattern_length, pattern_start, pattern_end, max_guess):
     '''This function is used to set the game parameters to values other than the default values
     it is not complete and could use a nice function to capture good values for these parameters to avoid repeated code
     '''
-    
-    print ('Press the corresponding number to change a parameter or press enter to return to the game:')
-    print ('1. Pattern Length', pattern_length)
-    
-    print ('''
-    Press the corresponding number to change a parameter or press enter to return to the game:
-    1. Pattern Length: {}
-    2. Pattern Range Start: {}
-    3. Pattern Range End: {}
-    4. Maximium Number of Guesses: {}
-    0. Return to Game
-    '''.format(pattern_length, pattern_start, pattern_end, max_guess))
-    
+  
     while True:
+
+        print ('''
+        Press the corresponding number to change a parameter or press enter to return to the game:
+        1. Pattern Length: {}
+        2. Pattern Range Start and End: {} , {}
+        3. Maximium Number of Guesses: {}
+        0. Return to Game
+        '''.format(pattern_length, pattern_start, pattern_end, max_guess))
+    
+
         try:
             parameter_number = int(input('Which parameter would you like to change?'))
     
             if parameter_number == 1:
-                pass
+                pattern_length = getInt('Pattern Length')
+                continue
             if parameter_number == 2:
-                pass
+                pattern_start, pattern_end = setStartAndEnd()
+                continue
             if parameter_number == 3:
-                pass
-            if parameter_number == 4:
-                pass
+                max_guess = getInt("Maximum number of guesses")
+                continue
             if parameter_number == 0:
-                pass
+                break
+
         except ValueError:
             print ('Oops please enter a number from the menu above.')
             continue
+    return pattern_length, pattern_start, pattern_end, max_guess
 
 
 
 
+def setStartAndEnd():
+    
+    while True:
+        pattern_start = getInt('Pattern Start')
+        pattern_end = getInt('Pattern End')
+        #check for greater than single digit
+        if pattern_start >= pattern_end:
+            continue
+
+    return pattern_start, pattern_end
+
+
+
+def getInt(parameter_name):
+    while True:
+            try:
+                return int(input('enter a value for {}'.format(parameter_name))) # captures parameter value
+               
+            except ValueError: #catches the error if the input is not integers and tries again
+                print ('Oops you entered something other than numbers')
+                continue     
+    
 
 def shuffleWord(word='mastermind',shuffles=10): 
     '''This function shuffles the letter in the word mastermind in place and then displays the word'''
@@ -212,7 +235,7 @@ def startGame():
     win = False
     
     clear()
-    shuffleWord() #
+    shuffleWord(shuffles=1) #
     
     print('''
     
@@ -250,7 +273,7 @@ Press enter to play!
 
     _ = input()
     if _.lower()=='s': #change game settings
-        setParameters(pattern_length, pattern_start, pattern_end, max_guess)
+        pattern_length, pattern_start, pattern_end, max_guess = setParameters(pattern_length, pattern_start, pattern_end, max_guess)
     
     if _.lower() == 'q' or _.lower() == 'quit': # quits game
         sys.exit()    
@@ -268,7 +291,7 @@ Press enter to play!
 
         #shuffleWord(word='checking',shuffles=2)
         
-        if correctLocation == 4: #stop game play if correct guess
+        if correctLocation == pattern_length: #stop game play if correct guess
             win = True
             break
         else:
